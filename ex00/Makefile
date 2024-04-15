@@ -6,7 +6,7 @@
 #    By: armandanger <armandanger@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/14 22:41:46 by armandanger       #+#    #+#              #
-#    Updated: 2024/04/14 23:36:23 by armandanger      ###   ########.fr        #
+#    Updated: 2024/04/15 09:19:15 by armandanger      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ NAME    = megaphone
 SRCS    =	\
 			megaphone.cpp \
 			
-OBJS    = $(SRCS:.c=.o)
+OBJS    = $(SRCS:.cpp=.o)
 
 all     : $(NAME)
 
@@ -30,9 +30,10 @@ $(NAME) :	$(OBJS)
 clean   :
 			rm -f $(OBJS)
 
-fclean  :	clean
-			rm $(NAME)
+fclean  :
+			@$(MAKE) clean			
+			rm -f $(NAME)
 
-re : fclean all
+re : fclean $(NAME)
 
 .PHONY  : all clean fclean re
