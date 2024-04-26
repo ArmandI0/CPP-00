@@ -3,20 +3,20 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: armandanger <armandanger@student.42.fr>    +#+  +:+       +#+         #
+#    By: aranger <aranger@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/14 22:41:46 by armandanger       #+#    #+#              #
-#    Updated: 2024/04/15 09:19:15 by armandanger      ###   ########.fr        #
+#    Updated: 2024/04/26 16:44:25 by aranger          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CPP     = c++
 CFLAGS  = -Wall -Wextra -Werror -std=c++98
-NAME    = megaphone
+NAME    = phone
 
 SRCS    =	\
-			megaphone.cpp \
-			
+			main.cpp \
+			utils.cpp \
 OBJS    = $(SRCS:.cpp=.o)
 
 all     : $(NAME)
