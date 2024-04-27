@@ -6,24 +6,12 @@
 /*   By: aranger <aranger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 22:16:31 by armandanger       #+#    #+#             */
-/*   Updated: 2024/04/26 16:44:01 by aranger          ###   ########.fr       */
+/*   Updated: 2024/04/27 15:14:10 by aranger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook_class.hpp"
 #include "Contact_class.hpp"
-
-Contact::Contact(void)
-{
-	firstname = "";
-	lastname = "";
-	nickname = "";
-	phone_number = "";
-	darkest_scrt = "";
-}
-Contact::~Contact(void){}
-PhoneBook_class::PhoneBook_class(void){}
-PhoneBook_class::~PhoneBook_class(void){}
 
 int main()
 {
@@ -32,19 +20,20 @@ int main()
 
 	while(1)
 	{
+		std::cout << "Enter a command : ";
 		std::getline(std::cin, input);
-
 		if (input.compare("ADD") == 0)
 		{
 			phone.add_contact();	
 		}
-		if (input.compare("SEARCH") == 0)		
+		else if (input.compare("SEARCH") == 0)		
 		{
-			
+			phone.search();
 		}
-		if (input.compare("EXIT") == 0)
+		else if (input.compare("EXIT") == 0)
 			exit(0);
-		std::cout << "Vous avez entré : " << input << std::endl;
+		else
+			std::cout << "Command not found" << std::endl;
 	}
     return 0;
 }
