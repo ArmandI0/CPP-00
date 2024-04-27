@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook_class.cpp                                :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aranger <aranger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 14:58:26 by aranger           #+#    #+#             */
-/*   Updated: 2024/04/27 15:14:16 by aranger          ###   ########.fr       */
+/*   Updated: 2024/04/27 17:41:34 by aranger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact_class.hpp"
-#include "PhoneBook_class.hpp"
+#include "Contact.hpp"
+#include "PhoneBook.hpp"
 
-PhoneBook_class::PhoneBook_class(void){}
-PhoneBook_class::~PhoneBook_class(void){}
+PhoneBook::PhoneBook(void){}
+PhoneBook::~PhoneBook(void){}
 
-void PhoneBook_class::add_contact()
+void PhoneBook::add_contact()
 {
-	static int i;
+	static int i = 0;
 	
 	if (i == 8)
 		i = 0;
@@ -30,7 +30,7 @@ void PhoneBook_class::add_contact()
 	i++;
 }
 
-void PhoneBook_class::search()
+void PhoneBook::search()
 {
 	std::string	input;
 	int	i;

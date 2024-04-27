@@ -6,22 +6,23 @@
 /*   By: aranger <aranger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 22:16:31 by armandanger       #+#    #+#             */
-/*   Updated: 2024/04/27 15:14:10 by aranger          ###   ########.fr       */
+/*   Updated: 2024/04/27 17:44:10 by aranger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook_class.hpp"
-#include "Contact_class.hpp"
+#include "PhoneBook.hpp"
+#include "Contact.hpp"
 
 int main()
 {
     std::string input;
-	PhoneBook_class phone;
+	PhoneBook phone;
 
 	while(1)
 	{
 		std::cout << "Enter a command : ";
-		std::getline(std::cin, input);
+		if(getline(std::cin, input) == -1)
+			exit (1);
 		if (input.compare("ADD") == 0)
 		{
 			phone.add_contact();	

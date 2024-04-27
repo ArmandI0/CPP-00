@@ -6,12 +6,12 @@
 /*   By: aranger <aranger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 16:13:55 by aranger           #+#    #+#             */
-/*   Updated: 2024/04/27 15:11:55 by aranger          ###   ########.fr       */
+/*   Updated: 2024/04/27 17:44:18 by aranger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook_class.hpp"
-#include "Contact_class.hpp"
+#include "PhoneBook.hpp"
+#include "Contact.hpp"
 
 std::string	str_rsz(std::string in)
 {
@@ -58,7 +58,8 @@ std::string	get_info(std::string req)
 	while (1)
 	{
 		std::cout << req;
-		std::getline(std::cin, input);
+		if(getline(std::cin, input) == -1)
+			exit(1);
 		if (input.empty() == false && only_spaces(input) == false)
 			break;
 		std::cerr << "Error : enter a valid argument" << std::endl;
@@ -89,7 +90,8 @@ std::string	get_number(std::string req)
 	while (1)
 	{
 		std::cout << req;
-		std::getline(std::cin, input);
+		if(getline(std::cin, input) == -1)
+			exit(1);
 		if (input.empty() == false && valid_index(input) == true)
 			break;
 		std::cerr << "Error : enter a valid index" << std::endl; 
