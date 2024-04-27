@@ -6,7 +6,7 @@
 /*   By: aranger <aranger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 15:15:17 by aranger           #+#    #+#             */
-/*   Updated: 2024/04/27 15:18:38 by aranger          ###   ########.fr       */
+/*   Updated: 2024/04/27 15:19:19 by aranger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,5 @@ class PhoneBook_class
 		void	add_contact();
 		void	search();
 };
-
 
 #endif

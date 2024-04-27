@@ -6,7 +6,7 @@
 #    By: aranger <aranger@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/14 22:41:46 by armandanger       #+#    #+#              #
-#    Updated: 2024/04/27 15:16:54 by aranger          ###   ########.fr        #
+#    Updated: 2024/04/27 15:26:20 by aranger          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ NAME    = phone
 SRCS    =	\
 			main.cpp \
 			utils.cpp \
-			Contact_Class.cpp \
+			Contact_class.cpp \
 			PhoneBook_class.cpp \
 
 OBJS    = $(SRCS:.cpp=.o)
