@@ -6,7 +6,7 @@
 /*   By: aranger <aranger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 22:16:31 by armandanger       #+#    #+#             */
-/*   Updated: 2024/04/27 17:44:10 by aranger          ###   ########.fr       */
+/*   Updated: 2024/04/28 14:08:46 by aranger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main()
 	while(1)
 	{
 		std::cout << "Enter a command : ";
-		if(getline(std::cin, input) == -1)
+		if(!getline(std::cin, input))
 			exit (1);
 		if (input.compare("ADD") == 0)
 		{

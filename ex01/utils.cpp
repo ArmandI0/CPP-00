@@ -6,7 +6,7 @@
 /*   By: aranger <aranger@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 16:13:55 by aranger           #+#    #+#             */
-/*   Updated: 2024/04/27 17:44:18 by aranger          ###   ########.fr       */
+/*   Updated: 2024/04/28 14:25:53 by aranger          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,11 @@
 
 std::string	str_rsz(std::string in)
 {
-	if (in.length() > 10)
-	{
-		in.resize(9);
-		in.append(".");
-	}
-	else
-	{
-		for (int size = in.length(); size < 10; size++)
-			in.insert(0, " ");
-	}
-	return (in);
+  if (in.length() > 10)
+    {
+        in = in.substr(0, 9) + ".";
+    }
+    return in;
 }
 
 void	print_contacts(Contact *rep)
@@ -35,7 +29,7 @@ void	print_contacts(Contact *rep)
 	std::cout << "|----------|----------|----------|----------|" << std::endl;
 	for(int i = 0; i < 8; i++)
 	{
-		std::cout << "|         " << i << "|" << str_rsz(rep[i].getFirstName()) << "|" << str_rsz(rep[i].getLastName()) << "|" << str_rsz(rep[i].getNickname()) << "|" << std::endl;
+		std::cout << "|"<< std::setw(10) << i << "|" << std::setw(10) << str_rsz(rep[i].getFirstName()) << "|" << std::setw(10) << str_rsz(rep[i].getLastName()) << "|" << std::setw(10) << str_rsz(rep[i].getNickname()) << "|" << std::endl;
 		std::cout << "|----------|----------|----------|----------|" << std::endl;
 	}
 	
@@ -58,7 +52,7 @@ std::string	get_info(std::string req)
 	while (1)
 	{
 		std::cout << req;
-		if(getline(std::cin, input) == -1)
+		if(!getline(std::cin, input))
 			exit(1);
 		if (input.empty() == false && only_spaces(input) == false)
 			break;
@@ -90,7 +84,7 @@ std::string	get_number(std::string req)
 	while (1)
 	{
 		std::cout << req;
-		if(getline(std::cin, input) == -1)
+		if(!getline(std::cin, input))
 			exit(1);
 		if (input.empty() == false && valid_index(input) == true)
 			break;
